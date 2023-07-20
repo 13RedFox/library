@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+$BASE_FONT: 'Inter', sans-serif;
+$SECOND_FONT: 'Forum', sans-serif;
+
+@function rem($size) {
+  $remSize: math.div($size, 16);
+  @return #{$remSize}rem;
+}

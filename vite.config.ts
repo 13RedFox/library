@@ -12,7 +12,7 @@ export default defineConfig({
       utils: '/src/utils',
       assets: '/src/assets',
       components: '/src/components',
-      styles: path.resolve(__dirname, './src/styles/styles.scss'),
+      styles: path.resolve(__dirname, './src/scss/styles.scss'),
     },
   },
 });

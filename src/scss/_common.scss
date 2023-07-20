@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+input,
+select,
+textarea,
+button {
+  font-family: $BASE_FONT;
+}
+
+html {
+  touch-action: manipulation;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $WHITE;
+  color: $BLACK;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: $GRAY;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: $GOLD;
+}
