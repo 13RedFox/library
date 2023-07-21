@@ -32,7 +32,7 @@ export const TheHeader: FC = () => {
             onClick={handleIsOpenProfile}
           />
           <Icon
-            name={isOpenNavigate ? 'Burger' : 'Close'}
+            name={!isOpenNavigate ? 'Burger' : 'Close'}
             size={28}
             className={styles.Header__nav_iconNav}
             onClick={handleIsOpenNavigate}

@@ -17,7 +17,7 @@ const navData: NavigationProps[] = [
 
 export const TheHeaderNav: FC<TheHeaderNavProps> = ({ isOpenNavigate }) => {
   return (
-    <ul className={clsx(styles.List, !isOpenNavigate ? styles.Mobile : null)}>
+    <ul className={clsx(styles.List, isOpenNavigate ? styles.Mobile : null)}>
       {[] &&
         navData.map((el) => (
           <li
