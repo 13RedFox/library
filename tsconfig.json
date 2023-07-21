@@ -15,11 +15,11 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "data": ["/data/*."],
-      "utils": ["/utils/*."],
-      "pages": ["/pages/*."],
-      "assets": ["/assets/*."],
-      "components": ["/components/*."]
+      "data/*": ["data/*"],
+      "pages/*": ["pages/*"],
+      "utils/*": ["utils/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"]
     },
 
     /* Linting */
@@ -28,6 +28,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/index.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
