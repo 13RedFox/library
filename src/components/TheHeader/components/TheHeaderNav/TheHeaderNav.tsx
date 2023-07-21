@@ -8,11 +8,11 @@ interface TheHeaderNavProps {
 }
 
 const navData: NavigationProps[] = [
-  { link: '/about', descr: 'about' },
-  { link: '/favorites', descr: 'favorites' },
-  { link: '/coffee-shop', descr: 'coffee shop' },
-  { link: '/contacts', descr: 'contacts' },
-  { link: '/library-card', descr: 'library card' },
+  { link: '#about', descr: 'about' },
+  { link: '#favorites', descr: 'favorites' },
+  { link: '#coffee-shop', descr: 'coffee shop' },
+  { link: '#contacts', descr: 'contacts' },
+  { link: '#library-card', descr: 'library card' },
 ];
 
 export const TheHeaderNav: FC<TheHeaderNavProps> = ({ isOpenNavigate }) => {
