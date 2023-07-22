@@ -1,0 +1,24 @@
+@import 'styles';
+
+.About {
+  padding: 20px 20px 40px;
+
+  &__descr {
+    @include text(rem(20), 400, $BLACK);
+    line-height: 200%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.Slider {
+  margin-bottom: 25px;
+  @include media($SCREEN_DESKTOP) {
+    margin-bottom: 40px;
+  }
+}
+
+.Slide {
+  cursor: pointer;
+  @include padding-hack(124.5%, cover);
+}

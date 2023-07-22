@@ -15,6 +15,7 @@ button {
 
 html {
   touch-action: manipulation;
+  scroll-behavior: smooth;
   height: 100%;
 }
 
@@ -46,5 +47,24 @@ button {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
+  background-color: $GOLD;
+}
+
+.bullets {
+  width: 68px !important;
+  display: flex;
+  margin: 0 auto;
+}
+
+.swiper-pagination-bullet {
+  @include size(16px, true);
+  @include transition(background-color);
+  background: $BLACK;
+  opacity: 1;
+  &:hover {
+    background-color: $GRAY;
+  }
+}
+.swiper-pagination-bullet-active {
   background-color: $GOLD;
 }
