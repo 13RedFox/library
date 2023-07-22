@@ -51,8 +51,9 @@ button {
 }
 
 .bullets {
-  width: 68px !important;
+  width: max-content;
   display: flex;
+  justify-content: center;
   margin: 0 auto;
 }
 
