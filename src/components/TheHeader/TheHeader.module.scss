@@ -61,7 +61,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // @include flex-col(center, center);
+  z-index: 2;
   @include media($SCREEN_DESKTOP) {
     width: fit-content;
     padding: 0;
