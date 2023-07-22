@@ -16,9 +16,12 @@
     }
     &_descr {
       font-family: $SECOND_FONT;
-      @include text(rem(30), 400, inherit);
+      @include text(rem(20), 400, inherit);
       line-height: 166.667%;
       letter-spacing: 0.6px;
+      @include media($SCREEN_TABLET) {
+        font-size: rem(30);
+      }
     }
   }
 
