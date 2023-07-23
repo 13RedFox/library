@@ -1,7 +1,7 @@
 import { Container, CustomTitle } from 'components/common';
 import { FC } from 'react';
 import styles from './HomeFavorites.module.scss';
-import { HomeFavoritesSeasons } from './components';
+import { HomeFavoritesList, HomeFavoritesSeasons } from './components';
 
 export const HomeFavorites: FC = () => {
   return (
@@ -12,6 +12,7 @@ export const HomeFavorites: FC = () => {
       <Container>
         <p className={styles.Favorites__descr}>Pick favorites of season</p>
         <HomeFavoritesSeasons />
+        <HomeFavoritesList />
       </Container>
     </section>
   );
