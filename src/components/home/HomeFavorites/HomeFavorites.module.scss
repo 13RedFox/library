@@ -1,0 +1,61 @@
+@import 'styles';
+
+.Favorites {
+  padding: 20px 20px 40px;
+
+  &__descr {
+    margin-bottom: 25px;
+    @include text(rem(20), 700, $BLACK);
+    @include media($SCREEN_TABLET_SMALL) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.Seasons {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  @include flex(space-between, center);
+  @include media($SCREEN_TABLET_SMALL) {
+    margin-bottom: 40px;
+  }
+  @include media($SCREEN_TABLET_LARGE) {
+    margin: 0 0 40px;
+  }
+
+  &__label {
+    @include flex(flex-start, center);
+    @include text(rem(14), 400, $BLACK);
+    @include transition(weight);
+    text-transform: capitalize;
+    cursor: pointer;
+    gap: 5px;
+    @include media($SCREEN_TABLET_SMALL) {
+      gap: 20px;
+      font-size: rem(20);
+    }
+
+    input[type='radio'] {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: $WHITE;
+      border: 2px solid $BLACK;
+      display: grid;
+      place-content: center;
+      @include size(17px, true);
+
+      &::before {
+        content: '';
+        transform: scale(0);
+        box-shadow: inset 1em 1em $BLACK;
+        @include size(7px, true);
+        @include transition(transform);
+      }
+
+      &:checked::before {
+        transform: scale(1);
+      }
+    }
+  }
+}
