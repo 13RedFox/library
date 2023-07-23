@@ -1,34 +1,32 @@
 import { CustomButton } from 'components/common';
 import { FC } from 'react';
-import { ImagesProps } from '.';
+import { FavoritesDataCardProps } from 'utils/types';
 import styles from '../../HomeFavorites.module.scss';
 
 interface HomeFavoritesItemProps {
-  item: ImagesProps;
+  card: FavoritesDataCardProps;
 }
-export const HomeFavoritesItem: FC<HomeFavoritesItemProps> = ({ item }) => {
-  const { src, alt } = item;
+
+export const HomeFavoritesItem: FC<HomeFavoritesItemProps> = ({ card }) => {
+  const { title, text, descriptionAuthor, descriptionBook, isBuyed, src } = card;
+
   return (
     <li
       className={styles.List__item}
-      key={alt}>
-      <h3 className={styles.List__item_title}>staff picks</h3>
+      key={descriptionBook}>
+      <h3 className={styles.List__item_title}>{title}</h3>
       <p className={styles.List__item_descr}>
-        The Book Eaters <span>By Sunyi Dean</span>
+        {descriptionBook} <span>By {descriptionAuthor}</span>
       </p>
-      <p className={styles.List__item_text}>
-        An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous
-        mind-eater son from tradition and certain death. Complete with dysfunctional family values,
-        light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
-      </p>
+      <p className={styles.List__item_text}>{text}</p>
       <img
         className={styles.List__item_img}
         src={src}
-        alt={alt}
+        alt={descriptionBook}
       />
       <CustomButton
         title='Buy'
-        disabled={false}
+        disabled={isBuyed}
       />
     </li>
   );

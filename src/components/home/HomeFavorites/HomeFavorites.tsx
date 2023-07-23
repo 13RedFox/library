@@ -1,9 +1,13 @@
 import { Container, CustomTitle } from 'components/common';
-import { FC } from 'react';
+import data from 'data/favorites-books.json';
+import { FC, useState } from 'react';
+import { FavoritesDataProps } from 'utils/types';
 import styles from './HomeFavorites.module.scss';
 import { HomeFavoritesList, HomeFavoritesSeasons } from './components';
 
 export const HomeFavorites: FC = () => {
+  const [favoritesData, setFavoritesData] = useState<FavoritesDataProps[]>(data);
+
   return (
     <section
       id={'favorites'}
@@ -11,8 +15,11 @@ export const HomeFavorites: FC = () => {
       <CustomTitle title='Favorites' />
       <Container>
         <p className={styles.Favorites__descr}>Pick favorites of season</p>
-        <HomeFavoritesSeasons />
-        <HomeFavoritesList />
+        <HomeFavoritesSeasons
+          favoritesData={favoritesData}
+          setFavoritesData={setFavoritesData}
+        />
+        <HomeFavoritesList favoritesData={favoritesData} />
       </Container>
     </section>
   );

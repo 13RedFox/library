@@ -1,26 +1,24 @@
 import { FC } from 'react';
+import { FavoritesDataProps } from 'utils/types';
 import { HomeFavoritesItem } from '.';
 import styles from '../../HomeFavorites.module.scss';
 
-export interface ImagesProps {
-  src: string;
-  alt: string;
+interface HomeFavoritesItemProps {
+  favoritesData: FavoritesDataProps[];
 }
 
-const images: ImagesProps[] = [
-  { src: '/images/FavoritesImage_01.jpeg', alt: 'FavoritesImage_01' },
-  { src: '/images/FavoritesImage_02.jpeg', alt: 'FavoritesImage_02' },
-  { src: '/images/FavoritesImage_03.jpeg', alt: 'FavoritesImage_03' },
-  { src: '/images/FavoritesImage_04.jpeg', alt: 'FavoritesImage_04' },
-];
+export const HomeFavoritesList: FC<HomeFavoritesItemProps> = ({ favoritesData }) => {
+  const datas = favoritesData.filter((data) => data.isChecked);
 
-const card = images.map((item) => (
-  <HomeFavoritesItem
-    key={item.alt}
-    item={item}
-  />
-));
-
-export const HomeFavoritesList: FC = () => {
-  return <ul className={styles.List}>{[] && card}</ul>;
+  return (
+    <ul className={styles.List}>
+      {[] &&
+        datas[0].books.map((card) => (
+          <HomeFavoritesItem
+            key={card.descriptionBook}
+            card={card}
+          />
+        ))}
+    </ul>
+  );
 };
