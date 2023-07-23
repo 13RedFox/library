@@ -27,11 +27,13 @@ export interface FavoritesDataCardProps {
 export interface CoffeeShopProps {
   id: string;
   title: string;
+  position: string;
   menuTitle: CoffeeShopMenuProps[];
 }
 
 export interface CoffeeShopMenuProps {
   id: string;
+  position: string;
   description: string;
   price: string;
 }

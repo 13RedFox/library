@@ -1,26 +1,28 @@
 [
   {
     "id": "01",
+    "position": "Left",
     "title": "Coffee & Tea",
     "menu": [
-      { "id": "01", "description": "Cold Brew Coffee", "price": "$3" },
-      { "id": "02", "description": "French Press Pot", "price": "$5" },
-      { "id": "03", "description": "Espresso", "price": "$2" },
-      { "id": "04", "description": "Cappuccino", "price": "$4" },
-      { "id": "05", "description": "Hot tea", "price": "$2" },
-      { "id": "06", "description": "Cold tea", "price": "$2" }
+      { "id": "01", "position": "Left", "description": "Cold Brew Coffee", "price": "$3" },
+      { "id": "02", "position": "Left", "description": "French Press Pot", "price": "$5" },
+      { "id": "03", "position": "Left", "description": "Espresso", "price": "$2" },
+      { "id": "04", "position": "Left", "description": "Cappuccino", "price": "$4" },
+      { "id": "05", "position": "Left", "description": "Hot tea", "price": "$2" },
+      { "id": "06", "position": "Left", "description": "Cold tea", "price": "$2" }
     ]
   },
   {
     "id": "02",
+    "position": "Right",
     "title": "Desserts & Cakes",
     "menu": [
-      { "id": "01", "description": "Forest Gateau", "price": "$16" },
-      { "id": "02", "description": "Blue Moon", "price": "$16" },
-      { "id": "03", "description": "Truffle Cake", "price": "$15" },
-      { "id": "04", "description": "Chocolate Cake", "price": "$18" },
-      { "id": "05", "description": "Poet’s Dream Cake", "price": "$16" },
-      { "id": "06", "description": "Pineapple Cake", "price": "$14" }
+      { "id": "01", "position": "Right", "description": "Forest Gateau", "price": "$16" },
+      { "id": "02", "position": "Right", "description": "Blue Moon", "price": "$16" },
+      { "id": "03", "position": "Right", "description": "Truffle Cake", "price": "$15" },
+      { "id": "04", "position": "Right", "description": "Chocolate Cake", "price": "$18" },
+      { "id": "05", "position": "Right", "description": "Poet’s Dream Cake", "price": "$16" },
+      { "id": "06", "position": "Right", "description": "Pineapple Cake", "price": "$14" }
     ]
   }
 ]
