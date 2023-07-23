@@ -44,6 +44,7 @@
       border: 2px solid $BLACK;
       display: grid;
       place-content: center;
+      cursor: pointer;
       @include size(17px, true);
 
       &::before {
@@ -128,7 +129,7 @@
 
     &_text {
       width: 100%;
-      max-width: 355px;
+      max-width: 358px;
       min-height: 320px;
       @include text(rem(13), 400, $BLACK);
       line-height: 266.66%;
