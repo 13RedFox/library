@@ -28,7 +28,7 @@ export interface CoffeeShopProps {
   id: string;
   title: string;
   position: string;
-  menuTitle: CoffeeShopMenuProps[];
+  menu: CoffeeShopMenuProps[];
 }
 
 export interface CoffeeShopMenuProps {
