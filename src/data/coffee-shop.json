@@ -1,0 +1,26 @@
+[
+  {
+    "id": "01",
+    "title": "Coffee & Tea",
+    "menu": [
+      { "id": "01", "description": "Cold Brew Coffee", "price": "$3" },
+      { "id": "02", "description": "French Press Pot", "price": "$5" },
+      { "id": "03", "description": "Espresso", "price": "$2" },
+      { "id": "04", "description": "Cappuccino", "price": "$4" },
+      { "id": "05", "description": "Hot tea", "price": "$2" },
+      { "id": "06", "description": "Cold tea", "price": "$2" }
+    ]
+  },
+  {
+    "id": "02",
+    "title": "Desserts & Cakes",
+    "menu": [
+      { "id": "01", "description": "Forest Gateau", "price": "$16" },
+      { "id": "02", "description": "Blue Moon", "price": "$16" },
+      { "id": "03", "description": "Truffle Cake", "price": "$15" },
+      { "id": "04", "description": "Chocolate Cake", "price": "$18" },
+      { "id": "05", "description": "Poet’s Dream Cake", "price": "$16" },
+      { "id": "06", "description": "Pineapple Cake", "price": "$14" }
+    ]
+  }
+]
