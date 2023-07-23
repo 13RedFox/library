@@ -1,5 +1,5 @@
 import { TheHeader } from 'components/TheHeader';
-import { HomeAbout, HomeFavorites, HomeWelcome } from 'components/home';
+import { HomeAbout, HomeCoffeeShop, HomeFavorites, HomeWelcome } from 'components/home';
 
 export const HomePage = () => {
   return (
@@ -8,6 +8,7 @@ export const HomePage = () => {
       <HomeWelcome />
       <HomeAbout />
       <HomeFavorites />
+      <HomeCoffeeShop />
     </>
   );
 };

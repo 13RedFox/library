@@ -1,0 +1,96 @@
+@import 'styles';
+
+.CoffeeShop {
+  padding: 20px 20px 40px;
+
+  &__descr {
+    @include text(rem(20), 400, $DARK);
+    line-height: 200%;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 25px;
+    @include media($SCREEN_TABLET_SMALL) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__wrapper {
+    @include flex-col(flex-start, center);
+    row-gap: 25px;
+    @include media($SCREEN_TABLET_SMALL) {
+      align-items: flex-start;
+      row-gap: 40px;
+    }
+    @include media($SCREEN_NETBOOK) {
+      @include flex-row(space-between, center);
+      row-gap: 0;
+    }
+  }
+
+  &__menuList {
+    width: 100%;
+    max-width: 485px;
+    @include flex-col(flex-start, flex-start);
+
+    &_title {
+      width: 100%;
+      font-family: $SECOND_FONT;
+      @include text(rem(40), 400, $GOLD);
+      line-height: 100%;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      @include media($SCREEN_TABLET_SMALL) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &_item {
+      width: 100%;
+      @include flex(flex-start, center);
+      @include text(rem(14), 400, $BLACK);
+      line-height: 200%;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include media($SCREEN_TABLET_SMALL) {
+        font-size: rem(20);
+        margin-bottom: 40px;
+      }
+
+      .Descr {
+        width: 100%;
+        max-width: 215px;
+      }
+
+      .Line {
+        width: 100px;
+        height: 1px;
+        background-color: $GOLD;
+        margin-left: 20px;
+        @include media($SCREEN_TABLET_SMALL) {
+          margin-left: 80px;
+        }
+      }
+
+      .Price {
+        font-family: $SECOND_FONT;
+        margin-left: 20px;
+        @include media($SCREEN_TABLET_SMALL) {
+          margin-left: 60px;
+        }
+      }
+    }
+  }
+}
+
+.Left {
+  text-align-last: left;
+}
+
+.Right {
+  text-align: right;
+}

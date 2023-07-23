@@ -23,3 +23,17 @@ export interface FavoritesDataCardProps {
   src: string;
   isBuyed: boolean;
 }
+
+export interface CoffeeShopProps {
+  id: string;
+  title: string;
+  position: string;
+  menu: CoffeeShopMenuProps[];
+}
+
+export interface CoffeeShopMenuProps {
+  id: string;
+  position: string;
+  description: string;
+  price: string;
+}
