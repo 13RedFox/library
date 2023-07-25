@@ -1,0 +1,129 @@
+@import 'styles';
+
+.Footer {
+  padding: 20px 20px 40px;
+  background-color: $DARK;
+
+  &__contacts {
+    margin-bottom: 30px;
+    @include flex-col(flex-start, center);
+    @include media($SCREEN_TABLET_SMALL) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    @include media($SCREEN_TABLET_SMALL) {
+      width: fit-content;
+    }
+
+    &_adress {
+      display: flex;
+      @include text(rem(15), 400, $WHITE);
+      line-height: 133.33%;
+      margin-bottom: 10px;
+      @include transition(color);
+      &:hover {
+        color: $GOLD;
+      }
+    }
+
+    &_social {
+      @include flex(center, center);
+      @include media($SCREEN_TABLET_SMALL) {
+        justify-content: flex-start;
+      }
+      padding: 8px 0;
+    }
+
+    &_socialItem {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &_socialLink {
+      display: flex;
+    }
+
+    &_socialLinkIcon {
+      fill: $WHITE;
+      @include transition(fill);
+      &:hover {
+        fill: $GOLD;
+      }
+    }
+  }
+
+  &__times {
+    @include flex-col;
+    width: 100%;
+    @include media($SCREEN_TABLET_SMALL) {
+      width: fit-content;
+    }
+
+    &_text {
+      @include text(rem(15), 400, $WHITE);
+      line-height: 133.33%;
+      text-align: right;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $WHITE;
+    margin-bottom: 45px;
+  }
+
+  &__wrapperCopy {
+    @include flex-col(flex-start, center);
+    @include text(rem(20), 400, $WHITE);
+    line-height: 100%;
+    @include media($SCREEN_TABLET_SMALL) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &_github,
+    &_title {
+      margin-bottom: 15px;
+      @include media($SCREEN_TABLET_SMALL) {
+        margin-bottom: 0;
+      }
+    }
+
+    &_title {
+      order: 1;
+      @include media($SCREEN_TABLET_SMALL) {
+        order: 2;
+      }
+    }
+
+    &_year {
+      order: 3;
+      @include media($SCREEN_TABLET_SMALL) {
+        order: 1;
+      }
+    }
+
+    &_github {
+      color: $WHITE;
+      order: 2;
+      @include transition(color);
+      @include media($SCREEN_TABLET_SMALL) {
+        order: 3;
+      }
+      &:hover {
+        color: $GOLD;
+      }
+    }
+  }
+}

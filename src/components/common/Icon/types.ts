@@ -1,1 +1,1 @@
-export type IconType = 'Burger' | 'Close' | 'Profile';
+export type IconType = 'Burger' | 'Close' | 'Facebook' | 'Instagram' | 'Profile' | 'Twitter';

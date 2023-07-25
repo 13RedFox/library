@@ -1,1 +1,1 @@
-export default ['Burger', 'Close', 'Profile'];
+export default ['Burger', 'Close', 'Facebook', 'Instagram', 'Profile', 'Twitter'];
