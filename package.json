@@ -25,6 +25,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "framer-motion": "^10.13.0",
+    "google-map-react": "^2.2.1",
     "prettier": "^3.0.0",
     "sass": "^1.64.0",
     "swiper": "^10.0.4",
