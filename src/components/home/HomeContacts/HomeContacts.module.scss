@@ -18,6 +18,12 @@
       font-size: rem(20);
       margin-bottom: 0;
     }
+    @include media($SCREEN_DESKTOP) {
+      font-size: rem(18);
+    }
+    @include media($SCREEN_MS) {
+      font-size: rem(20);
+    }
 
     &_title {
       margin-bottom: 20px;
@@ -84,7 +90,7 @@
 
 .Container {
   @include flex-col;
-  @include media($SCREEN_TABLET_SMALL) {
+  @include media($SCREEN_DESKTOP) {
     flex-direction: row;
     justify-content: space-between;
   }
