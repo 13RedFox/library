@@ -20,7 +20,11 @@
   &:disabled {
     border-color: $GOLD;
     color: $GOLD;
-    cursor: not-allowed;
+    pointer-events: none;
+    &:hover {
+      background-color: transparent;
+      color: $GOLD;
+    }
   }
 }
 

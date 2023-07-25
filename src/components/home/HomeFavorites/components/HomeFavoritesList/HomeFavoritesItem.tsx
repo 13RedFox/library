@@ -25,7 +25,7 @@ export const HomeFavoritesItem: FC<HomeFavoritesItemProps> = ({ card }) => {
         alt={descriptionBook}
       />
       <CustomButton
-        title='Buy'
+        title={isBuyed ? 'Own' : 'Buy'}
         disabled={isBuyed}
       />
     </li>
