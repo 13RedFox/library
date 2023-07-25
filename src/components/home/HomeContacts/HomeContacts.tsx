@@ -1,9 +1,20 @@
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import clsx from 'clsx';
 import { Container, CustomTitle } from 'components/common';
 import { FC } from 'react';
 import styles from './HomeContacts.module.scss';
 
 export const HomeContacts: FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const API: string = import.meta.env.VITE_API_KEY;
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: API,
+  });
+
+  console.log(API);
+
   return (
     <section
       id={'contacts'}
@@ -37,7 +48,17 @@ export const HomeContacts: FC = () => {
             </a>
           </p>
         </div>
-        <div className={styles.Contacts__maps} />
+        <div className={styles.Contacts__maps}>
+          {isLoaded && (
+            <GoogleMap
+              options={{ disableDefaultUI: true }}
+              zoom={17}
+              center={{ lat: 40.69566321775667, lng: -73.99129745711582 }}
+              mapContainerStyle={{ width: '100%', height: '414px' }}>
+              <Marker position={{ lat: 40.69566321775667, lng: -73.99129745711582 }} />
+            </GoogleMap>
+          )}
+        </div>
       </Container>
     </section>
   );

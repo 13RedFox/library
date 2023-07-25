@@ -80,7 +80,6 @@
   &__maps {
     width: 100%;
     min-height: 415px;
-    background-color: $GRAY;
     @include media($SCREEN_DESKTOP) {
       width: 50%;
       height: inherit;
