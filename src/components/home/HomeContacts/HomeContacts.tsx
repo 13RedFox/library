@@ -13,8 +13,6 @@ export const HomeContacts: FC = () => {
     googleMapsApiKey: API,
   });
 
-  console.log(API);
-
   return (
     <section
       id={'contacts'}
