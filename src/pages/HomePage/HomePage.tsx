@@ -5,6 +5,7 @@ import {
   HomeCoffeeShop,
   HomeContacts,
   HomeFavorites,
+  HomeLibraryCard,
   HomeWelcome,
 } from 'components/home';
 
@@ -17,6 +18,7 @@ export const HomePage = () => {
       <HomeFavorites />
       <HomeCoffeeShop />
       <HomeContacts />
+      <HomeLibraryCard />
       <TheFooter />
     </>
   );
