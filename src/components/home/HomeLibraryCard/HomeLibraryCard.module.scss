@@ -1,0 +1,113 @@
+@import 'styles';
+
+.LibraryCard {
+  padding: 20px 20px 40px;
+}
+
+// Find Card
+
+.Find {
+  width: 100%;
+  max-width: 600px;
+  @include flex-col(flex-start, center);
+
+  &__title {
+    @include text(rem(30), 400, $BLACK);
+    letter-spacing: 0.6px;
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    width: 100%;
+    padding: 20px 20px 30px;
+    border: 2px solid $GOLD;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    @include flex-col(flex-start, center);
+    @include media($SCREEN_DESKTOP) {
+      margin-bottom: 0;
+    }
+
+    &_wrapper {
+      width: 100%;
+      padding: 20px 20px 25px;
+      border-radius: 5px;
+      background-color: $GOLD;
+      margin-bottom: 20px;
+      @include flex-col;
+
+      .title {
+        font-family: $SECOND_FONT;
+        line-height: 166.67%;
+        letter-spacing: 0.6px;
+        margin-bottom: 20px;
+        @include text(rem(20), 400, $BLACK);
+        @include media($SCREEN_TABLET_SMALL) {
+          font-size: rem(30);
+        }
+      }
+
+      .input {
+        width: 100%;
+        padding: 8px 20px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        border: none;
+        @include text(rem(20), 400, rgba($DARK, 0.4));
+        @include media($SCREEN_TABLET_SMALL) {
+          font-size: rem(30);
+        }
+        &::placeholder {
+          color: rgba($DARK, 0.4);
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    width: fit-content;
+  }
+}
+
+// Get Card
+.Get {
+  width: 100%;
+  max-width: 460px;
+  @include flex-col(center, center);
+
+  &__title {
+    font-family: $SECOND_FONT;
+    @include text(rem(30), 400, $BLACK);
+    letter-spacing: 0.6px;
+    margin-bottom: 35px;
+  }
+
+  &__descr {
+    @include text(rem(20), 400, $BLACK);
+    line-height: 200%;
+    letter-spacing: 0.4px;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  &__inner {
+    @include flex(center, center);
+
+    &_btn {
+      margin-right: 20px;
+    }
+  }
+}
+
+.Container {
+  @include flex-col(flex-start, center);
+  @include media($SCREEN_DESKTOP) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
