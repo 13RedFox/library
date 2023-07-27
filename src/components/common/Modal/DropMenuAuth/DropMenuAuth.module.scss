@@ -1,0 +1,52 @@
+@import 'styles';
+
+.Auth {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 5px 10px 20px;
+  border-radius: 8px;
+  background-color: $WHITE;
+  border-radius: 14px;
+  border: 3px solid rgba($BLACK, 0.05);
+  box-shadow:
+    6px 6px 10px 0px #b4c1d5 inset,
+    -6px -6px 15px 0px $WHITE inset;
+  z-index: 2;
+  @include flex-col(flex-start, center);
+  @include transition(top);
+
+  &__title {
+    width: min-content;
+    position: relative;
+    @include text(rem(15), 700, $BLACK);
+    line-height: 133.33%;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      width: 40px;
+      background-color: $GOLD;
+    }
+  }
+
+  &__link {
+    @include text(rem(15), 400, $BLACK);
+    line-height: 133.33%;
+    margin-bottom: 10px;
+    @include transition(color);
+
+    &:hover {
+      color: $GOLD;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

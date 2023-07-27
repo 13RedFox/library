@@ -1,4 +1,4 @@
-import { Container, Icon } from 'components/common';
+import { Container, DropMenuAuth, Icon } from 'components/common';
 import { FC, useState } from 'react';
 import styles from './TheHeader.module.scss';
 import { TheHeaderNav } from './components/TheHeaderNav';
@@ -37,6 +37,7 @@ export const TheHeader: FC = () => {
             className={styles.Header__nav_iconNav}
             onClick={handleIsOpenNavigate}
           />
+          <DropMenuAuth isOpenProfile={isOpenProfile} />
         </nav>
       </Container>
     </header>
