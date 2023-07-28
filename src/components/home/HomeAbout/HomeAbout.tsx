@@ -8,8 +8,8 @@ export const HomeAbout: FC = () => {
     <section
       id={'about'}
       className={styles.About}>
-      <CustomTitle title='About' />
       <Container>
+        <CustomTitle title='About' />
         <p className={styles.About__descr}>
           The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop
           inside.
