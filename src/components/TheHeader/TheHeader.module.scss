@@ -57,11 +57,15 @@
   }
 
   .List {
+    height: 400px;
     @include flex-col(flex-start, center);
-    row-gap: 30px;
+    row-gap: 15px;
     background-color: $DARK;
-    padding-bottom: 100px;
+    @include media($SCREEN_TABLET) {
+      row-gap: 30px;
+    }
     @include media($SCREEN_DESKTOP) {
+      height: fit-content;
       flex-direction: row;
       justify-content: space-between;
       column-gap: 30px;
@@ -123,5 +127,6 @@
 }
 
 .Container {
+  position: relative;
   @include flex(space-between, center);
 }

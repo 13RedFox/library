@@ -28,6 +28,7 @@ export const TheHeader: FC = () => {
               size={20}
               className={styles.Header__profile_icon}
             />
+            <DropMenuAuth isOpenProfile={isOpenProfile} />
           </button>
           <button
             className={styles.Header__burger}
@@ -37,7 +38,6 @@ export const TheHeader: FC = () => {
               name={isOpenMenu ? 'Close' : 'Burger'}
             />
           </button>
-          <DropMenuAuth isOpenProfile={isOpenProfile} />
         </div>
       </Container>
     </header>
