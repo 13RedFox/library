@@ -10,7 +10,7 @@ interface DropMenuAuthProps {
 export const DropMenuAuth: FC<DropMenuAuthProps> = ({ isOpenProfile, auth }) => {
   const variants = {
     open: { opacity: 1, right: '20px' },
-    closed: { opacity: 0, right: 0 },
+    closed: { opacity: 0, right: '-200px' },
   };
 
   return (

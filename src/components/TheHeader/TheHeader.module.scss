@@ -5,9 +5,6 @@
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: $DARK;
-  @include media($SCREEN_FULLHD) {
-    padding: 20px 0;
-  }
 
   &__logo {
     display: block;
@@ -38,7 +35,7 @@
 
   &__nav {
     position: absolute;
-    top: 100%;
+    top: 70px;
     right: -100%;
     width: 100%;
     z-index: 1;
