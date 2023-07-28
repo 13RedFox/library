@@ -1,7 +1,20 @@
 @import 'styles';
 
 .Contacts {
-  padding: 20px 20px 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  .Container {
+    @include flex-col;
+  }
+
+  &__wrapper {
+    @include flex-col;
+    @include media($SCREEN_DESKTOP) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 
   &__info {
     @include flex-col;
@@ -44,6 +57,7 @@
         @include media($SCREEN_TABLET_SMALL) {
           margin-bottom: 20px;
         }
+
         &:last-child {
           margin-bottom: 0;
         }
@@ -51,9 +65,11 @@
         & > a {
           color: $BLACK;
           @include transition(color);
+
           &:hover {
             color: $GOLD;
           }
+
           &:focus {
             color: $GRAY;
           }
@@ -68,9 +84,11 @@
     &_mail {
       color: $BLACK;
       @include transition(color);
+
       &:hover {
         color: $GOLD;
       }
+
       &:focus {
         color: $GRAY;
       }
@@ -87,13 +105,6 @@
   }
 }
 
-.Container {
-  @include flex-col;
-  @include media($SCREEN_DESKTOP) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
 
 .Bold {
   font-weight: 700;

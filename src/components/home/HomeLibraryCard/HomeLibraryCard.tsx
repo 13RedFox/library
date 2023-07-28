@@ -8,10 +8,12 @@ export const HomeLibraryCard: FC = () => {
     <section
       id={'library-card'}
       className={styles.LibraryCard}>
-      <CustomTitle title='Digital Library Cards' />
       <Container className={styles.Container}>
-        <HomeLibraryCardFind />
-        <HomeLibraryCardGet />
+        <CustomTitle title='Digital Library Cards' />
+        <div className={styles.LibraryCard__wrapper}>
+          <HomeLibraryCardFind />
+          <HomeLibraryCardGet />
+        </div>
       </Container>
     </section>
   );

@@ -1,7 +1,8 @@
 @import 'styles';
 
 .Favorites {
-  padding: 20px 20px 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
   &__descr {
     margin-bottom: 25px;
@@ -28,13 +29,22 @@
   &__label {
     @include flex(flex-start, center);
     @include text(rem(14), 400, $BLACK);
-    @include transition(weight);
+    @include transition(weight, color);
     text-transform: capitalize;
     cursor: pointer;
     gap: 5px;
     @include media($SCREEN_TABLET_SMALL) {
       gap: 20px;
       font-size: rem(20);
+
+      &:hover &_anim {
+        color: crimson;
+      }
+
+      &_anim {
+        @include transition(color);
+      }
+
     }
 
     input[type='radio'] {
@@ -64,14 +74,16 @@
 
 // LIST
 .List {
-  @include flex(center, center);
+  @include flex-col(center, center);
   flex-wrap: wrap;
   row-gap: 25px;
   @include media($SCREEN_TABLET_SMALL) {
     row-gap: 40px;
   }
-  @include media($SCREEN_M) {
+  @include media($SCREEN_L) {
+    flex-direction: row;
     justify-content: space-between;
+    margin-right: 20px;
   }
 
   &__item {
@@ -82,9 +94,7 @@
     border: 1px solid $BLACK;
     padding: 13px 20px;
     @include media($SCREEN_L) {
-      &:nth-child(even) {
-        margin-right: 40px;
-      }
+      margin-right: 40px;
     }
 
     &_title {
@@ -96,6 +106,7 @@
       letter-spacing: 2px;
       text-transform: capitalize;
       margin-bottom: 20px;
+
       &::after {
         content: '';
         position: absolute;

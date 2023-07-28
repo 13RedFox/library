@@ -9,8 +9,8 @@ export const HomeCoffeeShop: FC = () => {
     <section
       id={'coffee-shop'}
       className={styles.CoffeeShop}>
-      <CustomTitle title='coffee shop' />
       <Container>
+        <CustomTitle title='coffee shop' />
         <p className={styles.CoffeeShop__descr}>
           In our library, we have of cozy coffee shop, welcoming in customers with frothy
           cappuccinos and friendly conversation. You can get a favorite book and read in coffee

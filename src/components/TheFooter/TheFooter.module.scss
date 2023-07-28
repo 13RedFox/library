@@ -1,7 +1,8 @@
 @import 'styles';
 
 .Footer {
-  padding: 20px 20px 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   background-color: $DARK;
 
   &__contacts {
@@ -25,6 +26,7 @@
       line-height: 133.33%;
       margin-bottom: 10px;
       @include transition(color);
+
       &:hover {
         color: $GOLD;
       }
@@ -40,6 +42,7 @@
 
     &_socialItem {
       margin-right: 15px;
+
       &:last-child {
         margin-right: 0;
       }
@@ -52,6 +55,7 @@
     &_socialLinkIcon {
       fill: $WHITE;
       @include transition(fill);
+
       &:hover {
         fill: $GOLD;
       }
@@ -70,6 +74,7 @@
       line-height: 133.33%;
       text-align: right;
       margin-bottom: 10px;
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -87,6 +92,7 @@
     @include flex-col(flex-start, center);
     @include text(rem(20), 400, $WHITE);
     line-height: 100%;
+    letter-spacing: 2px;
     @include media($SCREEN_TABLET_SMALL) {
       flex-direction: row;
       justify-content: space-between;
@@ -121,6 +127,7 @@
       @include media($SCREEN_TABLET_SMALL) {
         order: 3;
       }
+
       &:hover {
         color: $GOLD;
       }

@@ -12,8 +12,8 @@ export const HomeFavorites: FC = () => {
     <section
       id={'favorites'}
       className={styles.Favorites}>
-      <CustomTitle title='Favorites' />
       <Container>
+        <CustomTitle title='Favorites' />
         <p className={styles.Favorites__descr}>Pick favorites of season</p>
         <HomeFavoritesSeasons
           favoritesData={favoritesData}
