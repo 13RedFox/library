@@ -1,10 +1,11 @@
-import clsx from 'clsx';
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import { NavigationProps } from 'utils/types';
 import styles from '../../TheHeader.module.scss';
+import clsx from 'clsx';
 
 interface TheHeaderNavProps {
-  isOpenNavigate: boolean;
+  isOpenMenu: boolean;
+  setIsOpenMenu: Dispatch<SetStateAction<boolean>>;
 }
 
 const navData: NavigationProps[] = [
@@ -15,21 +16,24 @@ const navData: NavigationProps[] = [
   { link: '#library-card', descr: 'library card' },
 ];
 
-export const TheHeaderNav: FC<TheHeaderNavProps> = ({ isOpenNavigate }) => {
+export const TheHeaderNav: FC<TheHeaderNavProps> = ({ isOpenMenu, setIsOpenMenu }) => {
   return (
-    <ul className={clsx(styles.List, isOpenNavigate ? styles.Mobile : null)}>
-      {[] &&
-        navData.map((el) => (
-          <li
-            key={el.link}
-            className={styles.List__item}>
-            <a
-              className={styles.List__link}
-              href={el.link}>
-              {el.descr}
-            </a>
-          </li>
-        ))}
-    </ul>
+    <nav className={clsx(styles.Header__nav, isOpenMenu ? styles.Header__nav_open : null)}>
+      <ul className={styles.List}>
+        {[] &&
+          navData.map(({ link, descr }) => (
+            <li
+              key={link}
+              className={styles.List__item}>
+              <a
+                className={styles.List__link}
+                onClick={() => setIsOpenMenu(false)}
+                href={link}>
+                {descr}
+              </a>
+            </li>
+          ))}
+      </ul>
+    </nav>
   );
 };

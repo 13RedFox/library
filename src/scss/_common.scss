@@ -17,12 +17,14 @@ html {
   touch-action: manipulation;
   scroll-behavior: smooth;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   background-color: $WHITE;
   color: $BLACK;
+  overflow: hidden;
 }
 
 a {
@@ -62,10 +64,12 @@ button {
   @include transition(background-color);
   background: $BLACK;
   opacity: 1;
+
   &:hover {
     background-color: $GRAY;
   }
 }
+
 .swiper-pagination-bullet-active {
   background-color: $GOLD;
 }

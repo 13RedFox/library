@@ -1,8 +1,10 @@
 @import 'styles';
 
 .Header {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: $DARK;
-  padding: 20px 20px;
   @include media($SCREEN_FULLHD) {
     padding: 20px 0;
   }
@@ -11,113 +13,115 @@
     display: block;
     color: $WHITE;
     @include transition(color);
+
     &:hover {
       color: $GOLD;
     }
+
     &_descr {
       font-family: $SECOND_FONT;
-      @include text(rem(20), 400, inherit);
+      @include text(rem(18), 400, inherit);
       line-height: 166.667%;
       letter-spacing: 0.6px;
+      @include media($SCREEN_IPHONE_6) {
+        font-size: rem(20);
+      }
       @include media($SCREEN_TABLET) {
         font-size: rem(30);
       }
     }
   }
 
-  &__nav {
-    position: relative;
+  &__wrapper {
     @include flex(flex-start, center);
+  }
 
-    &_iconProfile,
-    &_iconNav {
-      fill: $WHITE;
+  &__nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 100%;
+    z-index: 1;
+    @include transition(right);
+    @include media($SCREEN_TABLET_SMALL) {
+      max-width: 335px;
+    }
+    @include media($SCREEN_DESKTOP) {
+      position: static;
+      max-width: fit-content;
+    }
+
+    &_open {
+      right: 0;
+    }
+  }
+
+  .List {
+    @include flex-col(flex-start, center);
+    row-gap: 30px;
+    background-color: $DARK;
+    padding-bottom: 100px;
+    @include media($SCREEN_DESKTOP) {
+      flex-direction: row;
+      justify-content: space-between;
+      column-gap: 30px;
+      padding-bottom: 0;
+    }
+
+    &__link {
+      display: block;
+      @include text(rem(20), 400, $WHITE);
+      @include transition(color);
+      text-transform: capitalize;
+      line-height: 250%;
+
+      &:hover {
+        color: $GOLD;
+      }
+    }
+  }
+
+  &__profile {
+    @include size(28px, true);
+    background-color: $WHITE;
+    cursor: pointer;
+    @include media($SCREEN_DESKTOP) {
+      margin-left: 40px;
+    }
+
+    &:hover &_icon {
+      fill: $GOLD;
+    }
+
+    &_icon {
+      fill: $BLACK;
       @include transition(fill);
-      cursor: pointer;
+    }
+  }
+
+  &__burger {
+    display: flex;
+    cursor: pointer;
+    margin-left: 20px;
+    @include media($SCREEN_TABLET) {
+      margin-left: 40px;
+    }
+    @include media($SCREEN_DESKTOP) {
+      display: none;
+    }
+
+    &_icon {
+      fill: $WHITE;
+      @include size(28px);
+      @include transition(fill);
+
       &:hover {
         fill: $GOLD;
       }
-      @include media($SCREEN_DESKTOP) {
-        margin-left: 40px;
-      }
-    }
-
-    &_iconNav {
-      display: block;
-      margin-left: 40px;
-      @include media($SCREEN_DESKTOP) {
-        display: none;
-      }
-    }
-  }
-}
-
-// Navigation
-.List {
-  position: absolute;
-  top: 44px;
-  right: -20px;
-  width: 330px;
-  padding: 30px 0 100px;
-  background-color: $DARK;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  @include media($SCREEN_DESKTOP) {
-    width: fit-content;
-    padding: 0;
-    position: static;
-    @include flex(flex-start, center);
-  }
-
-  &__item {
-    width: max-content;
-    margin-bottom: 30px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-    @include media($SCREEN_DESKTOP) {
-      margin-bottom: 0;
-      margin-right: 30px;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  &__link {
-    position: relative;
-    display: block;
-    @include text(rem(20), 400, $WHITE);
-    line-height: 250%;
-    text-transform: capitalize;
-    @include transition(color);
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 0%;
-      background-color: $GOLD;
-      @include transition(width);
-    }
-
-    &:hover {
-      color: $GOLD;
-    }
-    &:hover::after {
-      width: 100%;
     }
   }
 }
 
 .Container {
   @include flex(space-between, center);
-}
-
-.Mobile {
-  display: flex;
 }
