@@ -69,11 +69,19 @@
       padding-bottom: 0;
     }
 
+    &__item {
+      width: 100%;
+      @include media($SCREEN_DESKTOP) {
+        width: max-content;
+      }
+    }
+
     &__link {
       display: block;
       @include text(rem(20), 400, $WHITE);
       @include transition(color);
       text-transform: capitalize;
+      text-align: center;
       line-height: 250%;
 
       &:hover {
