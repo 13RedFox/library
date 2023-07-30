@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ROUTES } from './routes.ts';
 import { HomePage } from 'pages/HomePage';
-import { Login } from 'components/common';
+import { Login, NotFound } from 'components/common';
 
 export const Router: FC = () => {
   return (
@@ -14,6 +14,10 @@ export const Router: FC = () => {
       <Route
         path={ROUTES.LOGIN}
         element={<Login />}
+      />
+      <Route
+        path={'*'}
+        element={<NotFound />}
       />
     </Routes>
   );

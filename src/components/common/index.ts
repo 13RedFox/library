@@ -5,3 +5,4 @@ export * from './CustomTitle/';
 export * from './Icon/';
 export * from './Modal/';
 export * from './CustomInput/';
+export * from './NotFound/';
