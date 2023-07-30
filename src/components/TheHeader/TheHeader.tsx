@@ -3,6 +3,7 @@ import styles from './TheHeader.module.scss';
 import { Container, DropMenuAuth, Icon } from 'components/common';
 import { TheHeaderNav } from './components/TheHeaderNav';
 import { Link } from 'react-router-dom';
+import { ROUTES } from 'router/routes.ts';
 
 export const TheHeader: FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
@@ -12,7 +13,7 @@ export const TheHeader: FC = () => {
     <header className={styles.Header}>
       <Container className={styles.Container}>
         <Link
-          to='/'
+          to={ROUTES.HOME}
           className={styles.Header__logo}>
           <h1 className={styles.Header__logo_descr}>Brooklyn Public Library</h1>
         </Link>

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import styles from './DropMenuAuth.module.scss';
 import { Link } from 'react-router-dom';
+import { ROUTES } from 'router/routes.ts';
 
 interface DropMenuAuthProps {
   isOpenProfile: boolean;
@@ -21,12 +22,12 @@ export const DropMenuAuth: FC<DropMenuAuthProps> = ({ isOpenProfile, auth }) => 
       className={styles.Auth}>
       <h3 className={styles.Auth__title}>Profile</h3>
       <Link
-        to='/login'
+        to={ROUTES.LOGIN}
         className={styles.Auth__link}>
         {auth ? 'My profile' : 'Log In'}
       </Link>
       <Link
-        to='/registration'
+        to={ROUTES.REGISTRATION}
         className={styles.Auth__link}>
         {auth ? 'Log Out' : 'Register'}
       </Link>
