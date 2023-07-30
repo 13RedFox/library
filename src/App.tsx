@@ -1,5 +1,13 @@
-import { HomePage } from 'pages';
+import { Router } from 'router';
+import { TheHeader } from 'components/TheHeader';
+import { TheFooter } from 'components/TheFooter';
 
 export const App = () => {
-  return <HomePage />;
+  return (
+    <>
+      <TheHeader />
+      <Router />
+      <TheFooter />
+    </>
+  );
 };
