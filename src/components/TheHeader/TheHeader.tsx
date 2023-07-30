@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import styles from './TheHeader.module.scss';
 import { Container, DropMenuAuth, Icon } from 'components/common';
 import { TheHeaderNav } from './components/TheHeaderNav';
+import { Link } from 'react-router-dom';
 
 export const TheHeader: FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
@@ -10,11 +11,11 @@ export const TheHeader: FC = () => {
   return (
     <header className={styles.Header}>
       <Container className={styles.Container}>
-        <a
-          href='#'
+        <Link
+          to='/'
           className={styles.Header__logo}>
           <h1 className={styles.Header__logo_descr}>Brooklyn Public Library</h1>
-        </a>
+        </Link>
         <div className={styles.Header__wrapper}>
           <TheHeaderNav
             isOpenMenu={isOpenMenu}

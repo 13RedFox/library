@@ -1,0 +1,87 @@
+@import "styles";
+
+.Login {
+  height: 100vh;
+  @include flex(center, center);
+
+  &__form {
+    position: relative;
+    @include flex-col;
+    border-radius: 8px;
+    padding: 10px 20px 40px;
+    box-shadow: 0 0 10px rgba($BLACK, 0.1);
+
+    &_close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      fill: $GRAY_900;
+      cursor: pointer;
+      @include transition(fill);
+
+      &:hover {
+        fill: $GRAY_300;
+      }
+    }
+
+    &_title {
+      position: relative;
+      font-family: $SECOND_FONT;
+      @include text(rem(28), 400, $BLUE_600);
+      letter-spacing: 0.3px;
+      padding-left: 30px;
+      margin-bottom: 5px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: block;
+        @include size(18px, true);
+        background-color: $BLUE_600;
+        box-shadow: 0 0 0 rgba($BLUE_600, 0.3);
+        animation: pulse 1s linear infinite;
+      }
+    }
+
+    &_descr {
+      font-family: $SECOND_FONT;
+      @include text(rem(16), 400, $GRAY_500);
+      margin-bottom: 35px;
+    }
+
+    &_btn {
+      margin-bottom: 20px;
+    }
+
+    &_redirect {
+      @include flex(flex-start, center);
+
+      &_descr {
+        font-family: $SECOND_FONT;
+        @include text(rem(16), 400, $GRAY_500);
+        letter-spacing: 0.3px;
+        margin-right: 10px;
+      }
+
+      &_link {
+        @include flex;
+        font-family: $SECOND_FONT;
+        @include text(rem(20), 400, $BLUE_600);
+        letter-spacing: 0.3px;
+        @include transition(color);
+
+        &:hover {
+          color: $ORANGE_300;
+        }
+      }
+    }
+  }
+}
+
+
+.Container {
+  @include flex-col(flex-start, center);
+}

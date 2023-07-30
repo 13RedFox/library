@@ -4,5 +4,6 @@ export type IconType =
   | 'Email'
   | 'Facebook'
   | 'Instagram'
+  | 'Password'
   | 'Profile'
   | 'Twitter';

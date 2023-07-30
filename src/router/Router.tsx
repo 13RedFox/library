@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ROUTES } from './routes.ts';
 import { HomePage } from 'pages/HomePage';
+import { Login } from 'components/common';
 
 export const Router: FC = () => {
   return (
@@ -9,6 +10,10 @@ export const Router: FC = () => {
       <Route
         path={ROUTES.HOME}
         element={<HomePage />}
+      />
+      <Route
+        path={ROUTES.LOGIN}
+        element={<Login />}
       />
     </Routes>
   );

@@ -1,9 +1,10 @@
 import clsx from 'clsx';
-import { Icon } from 'components/common';
+import { Icon, IconType } from 'components/common';
 import { FC } from 'react';
 import styles from './CustomInput.module.scss';
 
 interface CustomInputProps {
+  name: IconType;
   label?: string;
   error?: string;
   withIcon: boolean;
@@ -11,7 +12,9 @@ interface CustomInputProps {
   placeholder?: string;
   type?: 'text' | 'email' | 'password' | 'number';
 }
+
 export const CustomInput: FC<CustomInputProps> = ({
+  name,
   label,
   error,
   withIcon,
@@ -27,11 +30,10 @@ export const CustomInput: FC<CustomInputProps> = ({
           className={clsx(styles.CustomInput__wrapper_input, withIcon ? styles.withIcon : null)}
           type={type}
           placeholder={placeholder}
-          // required
         />
         {withIcon ? (
           <Icon
-            name='Email'
+            name={name}
             size={20}
             className={styles.CustomInput__wrapper_icon}
           />
