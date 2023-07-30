@@ -1,0 +1,95 @@
+@import 'styles';
+
+.CustomInput {
+  @include flex-col;
+  width: 200px;
+
+  &__label {
+    width: fit-content;
+    @include text(rem(15), 400, $GRAY_700);
+    line-height: 133.33%;
+    letter-spacing: 0.2px;
+    margin-bottom: 5px;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: inherit;
+    margin-bottom: 25px;
+
+    &_icon {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      fill: transparent;
+      path {
+        @include transition(fill);
+        stroke: $GRAY_500;
+      }
+    }
+
+    &_input {
+      width: 100%;
+      @include text(rem(16), 300, $GRAY_900);
+      line-height: 150%;
+      border-radius: 15px;
+      border: 1px solid $GRAY_300;
+      outline: none;
+      box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+      padding: 10px 25px 10px 15px;
+      @include transition(border-color);
+
+      &::placeholder {
+        color: $GRAY_500;
+      }
+
+      &:focus-visible {
+        border-color: $PRIMARY_300;
+      }
+
+      &:invalid {
+        border-color: $ERROR_500;
+      }
+
+      &:visited {
+        border-color: $SUCCESS;
+      }
+    }
+
+    &_input:focus ~ &_errors,
+    &_input:focus:invalid ~ &_errors {
+      bottom: -20px;
+      opacity: 1;
+    }
+
+    &_input:focus:invalid ~ &_errors {
+      color: $ERROR_500;
+    }
+    &_input:invalid + &_icon {
+      path {
+        stroke: $ERROR_500;
+      }
+    }
+    &_input:valid + &_icon {
+      path {
+        stroke: $SUCCESS;
+      }
+    }
+
+    &_errors {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      opacity: 0;
+      @include text(rem(14), 400, $GRAY_500);
+      line-height: 133.33%;
+      letter-spacing: 0.2px;
+      @include transition(bottom, opacity, color);
+    }
+  }
+}
+
+.withIcon {
+  padding-left: 40px;
+}
