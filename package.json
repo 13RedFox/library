@@ -30,6 +30,7 @@
     "framer-motion": "^10.13.0",
     "google-map-react": "^2.2.1",
     "prettier": "^3.0.0",
+    "react-router": "^6.14.2",
     "sass": "^1.64.0",
     "swiper": "^10.0.4",
     "typescript": "^5.0.2",
