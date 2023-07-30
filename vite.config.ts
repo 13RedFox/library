@@ -12,6 +12,7 @@ export default defineConfig({
       pages: '/src/pages',
       utils: '/src/utils',
       assets: '/src/assets',
+      router: '/src/router',
       components: '/src/components',
       styles: path.resolve(__dirname, './src/scss/styles.scss'),
     },
