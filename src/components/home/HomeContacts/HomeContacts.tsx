@@ -1,17 +1,10 @@
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import clsx from 'clsx';
 import { Container, CustomTitle } from 'components/common';
 import { FC } from 'react';
 import styles from './HomeContacts.module.scss';
 
 export const HomeContacts: FC = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const API: string = import.meta.env.VITE_API_KEY;
 
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: API,
-  });
 
   return (
     <section
@@ -48,15 +41,7 @@ export const HomeContacts: FC = () => {
             </p>
           </div>
           <div className={styles.Contacts__maps}>
-            {isLoaded && (
-              <GoogleMap
-                options={{ disableDefaultUI: true }}
-                zoom={17}
-                center={{ lat: 40.69566321775667, lng: -73.99129745711582 }}
-                mapContainerStyle={{ width: '100%', height: '414px' }}>
-                <Marker position={{ lat: 40.69566321775667, lng: -73.99129745711582 }} />
-              </GoogleMap>
-            )}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3025.015975743674!2d-73.9912976!3d40.6956458!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a49b6395abd%3A0x5b6c5e44eb578313!2sBrooklyn%20Public%20Library%20-%20Brooklyn%20Heights%20Branch!5e0!3m2!1sru!2sua!4v1690818180847!5m2!1sru!2sua" width="100%" height="450" style={{border: 'none'}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </Container>
