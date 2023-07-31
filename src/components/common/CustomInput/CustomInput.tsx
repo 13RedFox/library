@@ -4,19 +4,21 @@ import { FC } from 'react';
 import styles from './CustomInput.module.scss';
 
 interface CustomInputProps {
-  name: IconType;
+  id: string;
   label?: string;
-  error?: string;
   withIcon: boolean;
+  inputName: 'email' | 'password';
   className?: string;
+  iconName: IconType;
   placeholder?: string;
   type?: 'text' | 'email' | 'password' | 'number';
 }
 
 export const CustomInput: FC<CustomInputProps> = ({
-  name,
+  id,
+  iconName,
   label,
-  error,
+  inputName,
   withIcon,
   className,
   placeholder,
@@ -24,21 +26,26 @@ export const CustomInput: FC<CustomInputProps> = ({
 }) => {
   return (
     <div className={clsx(styles.CustomInput, className)}>
-      <label className={styles.CustomInput__label}>{label}</label>
+      <label
+        className={styles.CustomInput__label}
+        htmlFor={id}>
+        {label}
+      </label>
       <div className={styles.CustomInput__wrapper}>
         <input
           className={clsx(styles.CustomInput__wrapper_input, withIcon ? styles.withIcon : null)}
+          id={id}
           type={type}
+          name={inputName}
           placeholder={placeholder}
         />
         {withIcon ? (
           <Icon
-            name={name}
+            name={iconName}
             size={20}
             className={styles.CustomInput__wrapper_icon}
           />
         ) : null}
-        <span className={styles.CustomInput__wrapper_errors}>{error}</span>
       </div>
     </div>
   );

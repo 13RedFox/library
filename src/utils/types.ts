@@ -37,3 +37,8 @@ export interface CoffeeShopMenuProps {
   description: string;
   price: string;
 }
+
+export interface LoginFormProps {
+  email: string;
+  password: string;
+}

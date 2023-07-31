@@ -47,47 +47,6 @@
       &:focus {
         border-color: $ORANGE_300;
       }
-
-      &:invalid {
-        border-color: $ERROR_500;
-      }
-
-      //      &:valid {
-      //        border-color: $SUCCESS;
-      //      }
-    }
-
-    &_input:focus ~ &_errors,
-    &_input:focus:invalid ~ &_errors {
-      bottom: -20px;
-      opacity: 1;
-    }
-
-    &_input:focus:invalid ~ &_errors {
-      color: $ERROR_500;
-    }
-
-    &_input:invalid + &_icon {
-      path {
-        stroke: $ERROR_500;
-      }
-    }
-
-    &_input:focus:valid + &_icon {
-      path {
-        stroke: $SUCCESS;
-      }
-    }
-
-    &_errors {
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      opacity: 0;
-      @include text(rem(14), 400, $GRAY_500);
-      line-height: 133.33%;
-      letter-spacing: 0.2px;
-      @include transition(bottom, opacity, color);
     }
   }
 }

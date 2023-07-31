@@ -1,7 +1,7 @@
+import { Container, CustomFormButton, CustomInput, CustomTitleForm, Icon } from 'components/common';
 import { FC } from 'react';
-import { Container, CustomFormButton, CustomInput, Icon } from 'components/common';
-import styles from './Login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import styles from './Login.module.scss';
 
 export const Login: FC = () => {
   const navigate = useNavigate();
@@ -13,26 +13,28 @@ export const Login: FC = () => {
     <div className={styles.Login}>
       <Container className={styles.Container}>
         <form className={styles.Login__form}>
-          <h3 className={styles.Login__form_title}>Login</h3>
+          <CustomTitleForm title='Login' />
           <span className={styles.Login__form_descr}>
             Login now and get full access to our app.
           </span>
           <CustomInput
-            name={'Email'}
+            id='email'
             type={'email'}
             withIcon={true}
+            inputName='email'
+            iconName={'Email'}
             label={'E-mail or readers card'}
-            error={'Enter your email or readers card'}
           />
           <CustomInput
             withIcon={true}
-            name={'Password'}
+            id='password'
+            inputName='password'
+            iconName={'Password'}
             type={'password'}
             label={'Password'}
-            error={'Enter your password'}
           />
           <CustomFormButton
-            disabled={true}
+            disabled={false}
             title={'log in'}
             className={styles.Login__form_btn}
           />
