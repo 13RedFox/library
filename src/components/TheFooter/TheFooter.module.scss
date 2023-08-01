@@ -108,6 +108,11 @@
 
     &_title {
       order: 1;
+      @include text(rem(20), 400, $WHITE);
+      @include transition(color);
+      &:hover {
+        color: $GOLD;
+      }
       @include media($SCREEN_TABLET_SMALL) {
         order: 2;
       }

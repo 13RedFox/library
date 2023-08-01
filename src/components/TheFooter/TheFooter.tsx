@@ -59,7 +59,11 @@ export const TheFooter: FC = () => {
         <div className={styles.Footer__line} />
         <div className={styles.Footer__wrapperCopy}>
           <span className={styles.Footer__wrapperCopy_year}>{new Date().getFullYear()}</span>
-          <span className={styles.Footer__wrapperCopy_title}>The Rolling Scopes School</span>
+          <a
+            href='https://rs.school/js-stage0/'
+            className={styles.Footer__wrapperCopy_title}>
+            <span>The Rolling Scopes School</span>
+          </a>
           <a
             className={styles.Footer__wrapperCopy_github}
             href='https://github.com/13RedFox'
