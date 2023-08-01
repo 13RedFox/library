@@ -1,0 +1,18 @@
+@import 'styles';
+
+.Login {
+  height: 100vh;
+  @include flex(center, center);
+
+  &__form {
+    @include flex-col;
+    border-radius: 8px;
+    box-shadow: $BOX_SHADOW_LG;
+    padding: 20px;
+
+    &_descr {
+      @include text(rem(16), 400, $GRAY_400);
+      margin-bottom: 20px;
+    }
+  }
+}

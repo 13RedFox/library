@@ -1,4 +1,4 @@
-import { NotFound } from 'components/common';
+import { LoginForm, NotFound } from 'components/common';
 import { HomePage } from 'pages/HomePage';
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -10,6 +10,10 @@ export const Router: FC = () => {
       <Route
         path={ROUTES.HOME}
         element={<HomePage />}
+      />
+      <Route
+        path={ROUTES.LOGIN}
+        element={<LoginForm />}
       />
       <Route
         path={'*'}

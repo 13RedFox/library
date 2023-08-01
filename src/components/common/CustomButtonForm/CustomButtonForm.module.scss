@@ -1,0 +1,48 @@
+@import 'styles';
+
+.Button {
+  position: relative;
+  width: fit-content;
+  line-height: 143%;
+  padding: 10px 16px 10px 32px;
+  box-shadow: $BOX_SHADOW_XS;
+  border: 1px solid $GRAY_300;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 auto;
+  @include text(rem(16), 600, $GRAY_700);
+  @include transition(color, border-color);
+
+  &:not([disabled]):focus {
+    border-color: $BLUE_400;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $GRAY_300;
+    border-color: $GRAY_200;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    background-color: $GRAY_300;
+    transform: translateY(-50%);
+    @include size(8px, true);
+    @include transition(background-color);
+  }
+
+  &:not([disabled]):hover {
+    color: $GRAY_500;
+    border-color: $GRAY_300;
+    &:before {
+      background-color: $SUCCESS_500;
+    }
+  }
+
+  &:active:before {
+    background-color: $ERROR_500;
+  }
+}

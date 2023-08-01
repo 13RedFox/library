@@ -1,0 +1,56 @@
+@import 'styles';
+
+.InputCustom {
+  position: relative;
+  width: 100%;
+  @include flex-col;
+
+  &__label {
+    @include text(rem(14), 500, $GRAY_700);
+    line-height: 143%;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    border-radius: 8px;
+    border: 1px solid $GRAY_300;
+    padding: 10px 14px 10px 42px;
+    margin-bottom: 30px;
+    outline: none;
+    background-color: $WHITE;
+    box-shadow: $BOX_SHADOW_XS;
+    @include text(rem(16), 400, $GRAY_500);
+    @include transition(border-color);
+    z-index: 1;
+
+    &:focus {
+      border-color: $BLUE_400;
+    }
+  }
+
+  &__input:focus + &__error {
+    bottom: 5px;
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    line-height: 143%;
+    @include text(rem(14), 400, $GRAY_500);
+    @include transition(bottom);
+    z-index: 0;
+  }
+
+  &__iconRight {
+    position: absolute;
+    top: 36px;
+    left: 14px;
+    fill: transparent;
+    z-index: 1;
+
+    path {
+      stroke: $GRAY_500;
+    }
+  }
+}
