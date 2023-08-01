@@ -18,6 +18,7 @@
       "pages/*": ["pages/*"],
       "utils/*": ["utils/*"],
       "router/*": ["router/*"],
+      "schema/*": ["schema/*"],
       "assets/*": ["assets/*"],
       "components/*": ["components/*"]
     },

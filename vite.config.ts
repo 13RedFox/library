@@ -11,6 +11,7 @@ export default defineConfig({
       data: '/src/data',
       pages: '/src/pages',
       utils: '/src/utils',
+      schema: '/src/schema',
       assets: '/src/assets',
       router: '/src/router',
       components: '/src/components',

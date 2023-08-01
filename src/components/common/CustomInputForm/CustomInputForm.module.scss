@@ -26,6 +26,10 @@
     &:focus {
       border-color: $BLUE_400;
     }
+
+    &:invalid {
+      border-color: $ERROR_500;
+    }
   }
 
   &__input:focus + &__error {

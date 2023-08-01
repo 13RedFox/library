@@ -13,36 +13,22 @@
   @include text(rem(16), 600, $GRAY_700);
   @include transition(color, border-color);
 
-  &:not([disabled]):focus {
+  &:focus {
     border-color: $BLUE_400;
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    color: $GRAY_300;
-    border-color: $GRAY_200;
+  &:hover {
+    color: $GRAY_500;
+    border-color: $BLUE_300;
   }
 
-  &:before {
-    content: '';
+  &__dot {
     position: absolute;
     top: 50%;
     left: 16px;
+    @include size(8px, true);
     background-color: $GRAY_300;
     transform: translateY(-50%);
-    @include size(8px, true);
     @include transition(background-color);
-  }
-
-  &:not([disabled]):hover {
-    color: $GRAY_500;
-    border-color: $GRAY_300;
-    &:before {
-      background-color: $SUCCESS_500;
-    }
-  }
-
-  &:active:before {
-    background-color: $ERROR_500;
   }
 }

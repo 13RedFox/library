@@ -8,11 +8,36 @@
     @include flex-col;
     border-radius: 8px;
     box-shadow: $BOX_SHADOW_LG;
-    padding: 20px;
+    padding: 30px 20px;
 
     &_descr {
       @include text(rem(16), 400, $GRAY_400);
       margin-bottom: 20px;
+    }
+
+    &_btn {
+      margin-bottom: 15px;
+    }
+
+    &_wrapperReg {
+      @include flex(center, center);
+
+      &_descr {
+        @include text(rem(14), 400, $GRAY_500);
+        margin-right: 5px;
+      }
+
+      &_link {
+        font-family: $SECOND_FONT;
+        outline: none;
+        @include text(rem(20), 400, $BLUE_500);
+        @include transition(color);
+
+        &:hover,
+        &:focus {
+          color: $BLUE_300;
+        }
+      }
     }
   }
 }

@@ -1,22 +1,33 @@
 import clsx from 'clsx';
-import { FC } from 'react';
+import { CSSProperties, FC } from 'react';
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
+import { LoginSchema } from 'schema/loginSchema';
 import { Icon, IconType } from '..';
 import styles from './CustomInputForm.module.scss';
 
 interface CustomInputProps {
-  className?: string;
   label: string;
-  error: string;
+  className?: string;
+  style?: errorsProps;
   iconNameRight: IconType;
   name: 'email' | 'password';
+  errors: FieldErrors<LoginSchema>;
   type: 'text' | 'email' | 'password';
+  register: UseFormRegister<LoginSchema>;
+}
+
+interface errorsProps {
+  input: CSSProperties;
+  message: CSSProperties;
 }
 
 export const CustomInputForm: FC<CustomInputProps> = ({
   name,
   type,
   label,
-  error,
+  style,
+  errors,
+  register,
   iconNameRight,
   className,
 }) => {
@@ -30,10 +41,15 @@ export const CustomInputForm: FC<CustomInputProps> = ({
       <input
         id={name}
         type={type}
-        name={name}
+        style={style?.input}
+        {...register(name)}
         className={styles.InputCustom__input}
       />
-      <span className={styles.InputCustom__error}>{error}</span>
+      <span
+        style={style?.message}
+        className={styles.InputCustom__error}>
+        {errors[name]?.message}
+      </span>
       <Icon
         name={iconNameRight}
         size={20}
