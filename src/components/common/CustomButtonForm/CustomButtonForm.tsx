@@ -19,7 +19,6 @@ export const CustomButtonForm: FC<CustomButtonFormProps> = ({
   disabled,
   className,
   onClick,
-  errors,
 }) => {
   return (
     <button
