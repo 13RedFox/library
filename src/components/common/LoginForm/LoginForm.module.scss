@@ -2,11 +2,13 @@
 
 .Login {
   height: 100vh;
+  background-color: $BLUE_GRAY_800;
   @include flex(center, center);
 
   &__form {
     @include flex-col;
     border-radius: 8px;
+    background-color: $WHITE;
     box-shadow: $BOX_SHADOW_LG;
     padding: 30px 20px;
 

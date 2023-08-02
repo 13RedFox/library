@@ -89,7 +89,7 @@
 .Get {
   width: 100%;
   max-width: 460px;
-  @include flex-col(center, center);
+  @include flex-col(center, flex-end);
 
   &__title {
     font-family: $SECOND_FONT;
