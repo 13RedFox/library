@@ -134,6 +134,26 @@
 
         &_number {
           color: $BLUE_500;
+          margin-right: 10px;
+        }
+
+        &_icon {
+          fill: transparent;
+          cursor: pointer;
+          path {
+            stroke: $GRAY_600;
+            @include transition(stroke);
+            &:hover {
+              stroke: $GRAY_300;
+            }
+          }
+        }
+
+        &_copy {
+          font-family: $SECOND_FONT;
+          margin-left: 10px;
+          @include text(rem(14), 400, $SUCCESS_400);
+          @include transition(opacity);
         }
       }
     }
@@ -157,7 +177,10 @@
     }
 
     &_icon {
-      fill: $GOLD;
+      fill: transparent;
+      path {
+        stroke: $GOLD;
+      }
     }
 
     &_count {

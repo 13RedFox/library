@@ -1,11 +1,20 @@
 import clsx from 'clsx';
 import { Icon } from 'components/common';
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'router/routes';
 import styles from './ModalProfile.module.scss';
 
 export const ModalProfile: FC = () => {
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const handleCopy = () => {
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
   return (
     <div className={styles.Profile}>
       <div className={styles.Profile__wrapper}>
@@ -28,7 +37,7 @@ export const ModalProfile: FC = () => {
             <li className={styles.statisticsList__item}>
               <h4 className={styles.statisticsList__item_title}>visits</h4>
               <Icon
-                name='Profile'
+                name='User'
                 size={20}
                 className={styles.statisticsList__item_icon}
               />
@@ -37,7 +46,7 @@ export const ModalProfile: FC = () => {
             <li className={styles.statisticsList__item}>
               <h4 className={styles.statisticsList__item_title}>bonuses</h4>
               <Icon
-                name='Profile'
+                name='Star'
                 size={20}
                 className={styles.statisticsList__item_icon}
               />
@@ -46,7 +55,7 @@ export const ModalProfile: FC = () => {
             <li className={styles.statisticsList__item}>
               <h4 className={styles.statisticsList__item_title}>Books</h4>
               <Icon
-                name='Profile'
+                name='Cart'
                 size={20}
                 className={styles.statisticsList__item_icon}
               />
@@ -67,6 +76,20 @@ export const ModalProfile: FC = () => {
           <div className={styles.Profile__wrapper_infoCard}>
             <span className={styles.Profile__wrapper_infoCard_text}>Card number</span>
             <span className={styles.Profile__wrapper_infoCard_number}>F00234030</span>
+            <CopyToClipboard
+              text='F00234030'
+              onCopy={handleCopy}>
+              <Icon
+                name='Copy'
+                size={18}
+                className={styles.Profile__wrapper_infoCard_icon}
+              />
+            </CopyToClipboard>
+            <span
+              style={{ opacity: copied ? 1 : 0 }}
+              className={styles.Profile__wrapper_infoCard_copy}>
+              Copied!
+            </span>
           </div>
         </div>
       </div>
