@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ROUTES } from 'router/routes';
 import { LoginSchema, loginSchema } from 'schema/loginSchema';
 import { CustomInputForm, CustomTitleForm } from '..';
@@ -9,6 +9,8 @@ import { CustomButtonForm } from '../CustomButtonForm';
 import styles from './LoginForm.module.scss';
 
 export const LoginForm: FC = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -17,6 +19,7 @@ export const LoginForm: FC = () => {
 
   const onSubmitLogin: SubmitHandler<LoginSchema> = (data) => {
     console.log(data);
+    navigate('/');
   };
 
   const errorDot = { backgroundColor: errors.email || errors.password ? '#f04438' : '#12b76a' };
