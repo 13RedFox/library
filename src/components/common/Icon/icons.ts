@@ -1,8 +1,12 @@
 export { ReactComponent as IconBurger } from 'assets/svg/Burger.svg';
+export { ReactComponent as IconCart } from 'assets/svg/Cart.svg';
 export { ReactComponent as IconClose } from 'assets/svg/Close.svg';
+export { ReactComponent as IconCopy } from 'assets/svg/Copy.svg';
 export { ReactComponent as IconEmail } from 'assets/svg/Email.svg';
 export { ReactComponent as IconFacebook } from 'assets/svg/Facebook.svg';
 export { ReactComponent as IconInstagram } from 'assets/svg/Instagram.svg';
 export { ReactComponent as IconPassword } from 'assets/svg/Password.svg';
 export { ReactComponent as IconProfile } from 'assets/svg/Profile.svg';
+export { ReactComponent as IconStar } from 'assets/svg/Star.svg';
 export { ReactComponent as IconTwitter } from 'assets/svg/Twitter.svg';
+export { ReactComponent as IconUser } from 'assets/svg/User.svg';
