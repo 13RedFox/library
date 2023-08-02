@@ -1,0 +1,203 @@
+@import 'styles';
+
+.Profile {
+  height: 100vh;
+  background-color: $BLUE_GRAY_800;
+  padding: 20px 10px;
+  @include flex(center, center);
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: $BOX_SHADOW_MD;
+    border-radius: 8px;
+    overflow: hidden;
+    @include flex-col;
+    @include media($SCREEN_TABLET_SMALL) {
+      @include flex-row;
+      box-shadow: $BOX_SHADOW_LG;
+    }
+
+    &_close {
+      display: flex;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      &Icon {
+        fill: $GRAY_600;
+        @include transition(fill);
+      }
+
+      &:hover &Icon {
+        fill: $BLUE_500;
+      }
+    }
+
+    &_user {
+      background-color: $BG;
+      padding: 20px;
+      @include flex(flex-start, center);
+      @include media($SCREEN_TABLET_SMALL) {
+        @include flex-col(center, center);
+        row-gap: 15px;
+        width: 170px;
+      }
+
+      &Latters {
+        position: relative;
+        margin-right: 10px;
+        line-height: 133.33%;
+        background-color: $WHITE;
+        text-transform: uppercase;
+        @include size(28px, true);
+        @include flex(center, center);
+        @include text(rem(15), 400, $GRAY_500);
+
+        &:after {
+          position: absolute;
+          content: '';
+          right: 1px;
+          bottom: 1px;
+          @include size(6px, true);
+          background-color: $SUCCESS_500;
+        }
+
+        @include media($SCREEN_TABLET_SMALL) {
+          @include size(80px);
+          font-size: rem(24);
+
+          &:after {
+            @include size(20px);
+          }
+        }
+      }
+
+      &Name {
+        font-family: $SECOND_FONT;
+        @include text(rem(20), 400, $BLUE_500);
+        line-height: 100%;
+        text-transform: capitalize;
+        @include media($SCREEN_TABLET_SMALL) {
+          font-size: rem(24);
+        }
+      }
+    }
+
+    &_info {
+      width: 100%;
+      padding: 20px;
+      background-color: $WHITE;
+
+      &Title {
+        font-family: $SECOND_FONT;
+        margin-bottom: 20px;
+        text-align: center;
+        @include text(rem(40), 400, $GRAY_800);
+        @include media($SCREEN_TABLET_SMALL) {
+          margin-bottom: 40px;
+          text-align: left;
+        }
+      }
+
+      &Statistics {
+        margin-bottom: 20px;
+      }
+
+      &Books {
+        text-align: center;
+        margin-bottom: 20px;
+        @include text(rem(25), 400, $GRAY_700);
+        @include media($SCREEN_TABLET_SMALL) {
+          text-align: left;
+          margin-bottom: 30px;
+        }
+      }
+
+      &Rent {
+        margin-bottom: 20px;
+        @include media($SCREEN_TABLET_SMALL) {
+          margin-bottom: 40px;
+        }
+      }
+
+      &Card {
+        font-family: $SECOND_FONT;
+        @include flex(flex-start, center);
+        @include text(rem(20), 400, $GRAY_500);
+        line-height: 100%;
+
+        &_text {
+          margin-right: 10px;
+        }
+
+        &_number {
+          color: $BLUE_500;
+        }
+      }
+    }
+  }
+}
+
+.statisticsList {
+  @include flex(flex-start, center);
+  column-gap: 20px;
+
+  &__item {
+    font-family: $SECOND_FONT;
+    @include flex-col(flex-start, center);
+    row-gap: 10px;
+
+    &_title {
+      @include text(rem(20), 400, $GRAY_700);
+      letter-spacing: 100%;
+      letter-spacing: 0.4px;
+      text-transform: capitalize;
+    }
+
+    &_icon {
+      fill: $GOLD;
+    }
+
+    &_count {
+      @include text(rem(13), 400, $GRAY_400);
+      letter-spacing: 0.2px;
+    }
+  }
+}
+
+.rentedList {
+  @include flex-col;
+  row-gap: 10px;
+  border-radius: 8px;
+  padding: 5px;
+  border: 1px solid $GRAY_100;
+
+  &__item {
+    position: relative;
+    font-family: $SECOND_FONT;
+    @include flex-col;
+    @include text(rem(20), 400, $GRAY_400);
+    row-gap: 5px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding-left: 20px;
+    padding-bottom: 5px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background-color: $GRAY_600;
+      transform: translateY(-50%);
+      @include size(7px, true);
+    }
+
+    &_author {
+      color: $GRAY_700;
+    }
+  }
+}
