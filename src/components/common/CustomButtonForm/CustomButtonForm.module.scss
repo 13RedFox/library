@@ -4,12 +4,11 @@
   position: relative;
   width: fit-content;
   line-height: 143%;
-  padding: 10px 16px 10px 32px;
+  padding: 10px 16px 10px 16px;
   box-shadow: $BOX_SHADOW_XS;
   border: 1px solid $GRAY_300;
   border-radius: 8px;
   cursor: pointer;
-  margin: 0 auto;
   @include text(rem(16), 600, $GRAY_700);
   @include transition(color, border-color);
 

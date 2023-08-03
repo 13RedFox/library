@@ -1,0 +1,126 @@
+@import 'styles';
+
+.Register {
+  height: 100vh;
+  padding: 10px 20px;
+  background-color: $BLUE_GRAY_800;
+  @include flex(center, center);
+
+  &__form {
+    position: relative;
+    border-radius: 8px;
+    background-color: $WHITE;
+    box-shadow: $BOX_SHADOW_LG;
+    padding: 30px 20px;
+
+    &_close {
+      display: flex;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+
+      &Icon {
+        fill: $GRAY_600;
+        @include transition(fill);
+      }
+
+      &:hover &Icon {
+        fill: $BLUE_500;
+      }
+    }
+
+    &_descr {
+      @include text(rem(16), 400, $GRAY_400);
+      margin-bottom: 20px;
+    }
+
+    &_input {
+      margin-bottom: 10px;
+    }
+
+    &_btn {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    &_wrapperReg {
+      @include flex(center, center);
+
+      &_descr {
+        @include text(rem(14), 400, $GRAY_500);
+        margin-right: 5px;
+      }
+
+      &_link {
+        font-family: $SECOND_FONT;
+        outline: none;
+        @include text(rem(20), 400, $BLUE_500);
+        @include transition(color);
+
+        &:hover,
+        &:focus {
+          color: $BLUE_300;
+        }
+      }
+    }
+  }
+}
+
+.Input {
+  position: relative;
+  width: 100%;
+  @include flex-col;
+
+  &__label {
+    @include text(rem(14), 500, $GRAY_700);
+    line-height: 143%;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    border-radius: 8px;
+    border: 1px solid $GRAY_300;
+    padding: 10px 14px 10px 42px;
+    margin-bottom: 30px;
+    outline: none;
+    background-color: $WHITE;
+    box-shadow: $BOX_SHADOW_XS;
+    @include text(rem(16), 400, $GRAY_500);
+    @include transition(border-color);
+    z-index: 1;
+
+    &:focus {
+      border-color: $BLUE_400;
+    }
+
+    &:invalid {
+      border-color: $ERROR_500;
+    }
+  }
+
+  &__input:focus + &__error {
+    bottom: 5px;
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    line-height: 143%;
+    @include text(rem(14), 400, $GRAY_500);
+    @include transition(bottom);
+    z-index: 0;
+  }
+
+  &__iconRight {
+    position: absolute;
+    top: 36px;
+    left: 14px;
+    fill: transparent;
+    z-index: 1;
+
+    path {
+      stroke: $GRAY_500;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { ROUTES } from 'router/routes';
 import { LoginSchema, loginSchema } from 'schema/loginSchema';
-import { CustomInputForm, CustomTitleForm } from '..';
+import { CustomInputForm, CustomTitleForm, Icon } from '..';
 import { CustomButtonForm } from '../CustomButtonForm';
 import styles from './LoginForm.module.scss';
 
@@ -34,6 +34,15 @@ export const LoginForm: FC = () => {
         className={styles.Login__form}
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit(onSubmitLogin)}>
+        <Link
+          to={ROUTES.HOME}
+          className={styles.Login__form_close}>
+          <Icon
+            size={20}
+            name='Close'
+            className={styles.Login__form_closeIcon}
+          />
+        </Link>
         <CustomTitleForm
           title='Login'
           className={styles.Login__form_title}
@@ -65,7 +74,7 @@ export const LoginForm: FC = () => {
           className={styles.Login__form_btn}
         />
         <div className={styles.Login__form_wrapperReg}>
-          <p className={styles.Login__form_wrapperReg_descr}>Don't hane an account ?</p>
+          <p className={styles.Login__form_wrapperReg_descr}>Don't have an account ?</p>
           <Link
             to={ROUTES.REGISTRATION}
             className={styles.Login__form_wrapperReg_link}>
