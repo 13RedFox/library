@@ -1,5 +1,5 @@
 import { LoginForm, NotFound } from 'components/common';
-import { ModalProfile } from 'components/common/Modal/';
+import { ModalProfile, ModalRegisterForm } from 'components/common/Modal/';
 import { HomePage } from 'pages/HomePage';
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -15,6 +15,10 @@ export const Router: FC = () => {
       <Route
         path={ROUTES.LOGIN}
         element={<LoginForm />}
+      />
+      <Route
+        path={ROUTES.REGISTRATION}
+        element={<ModalRegisterForm />}
       />
       <Route
         path={ROUTES.PROFILE}

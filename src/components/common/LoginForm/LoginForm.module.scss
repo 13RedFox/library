@@ -6,11 +6,28 @@
   @include flex(center, center);
 
   &__form {
+    position: relative;
     @include flex-col;
     border-radius: 8px;
     background-color: $WHITE;
     box-shadow: $BOX_SHADOW_LG;
     padding: 30px 20px;
+
+    &_close {
+      display: flex;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+
+      &Icon {
+        fill: $GRAY_600;
+        @include transition(fill);
+      }
+
+      &:hover &Icon {
+        fill: $BLUE_500;
+      }
+    }
 
     &_descr {
       @include text(rem(16), 400, $GRAY_400);
@@ -18,6 +35,7 @@
     }
 
     &_btn {
+      width: 100%;
       margin-bottom: 15px;
     }
 
